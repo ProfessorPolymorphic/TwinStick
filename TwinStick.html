@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.220">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>TwinStick Data Summary</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="TwinStick_files/libs/clipboard/clipboard.min.js"></script>
+<script src="TwinStick_files/libs/quarto-html/quarto.js"></script>
+<script src="TwinStick_files/libs/quarto-html/popper.min.js"></script>
+<script src="TwinStick_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="TwinStick_files/libs/quarto-html/anchor.min.js"></script>
+<link href="TwinStick_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="TwinStick_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="TwinStick_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="TwinStick_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="TwinStick_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">TwinStick Data Summary</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The purpose of this document is to consistently summarize the data from Project TwinStick, allowing us to more consistently test the evolutionary model and gameplay during development.</p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>In this section, we ingest the data from whatever runs are relevant to the analysis. The data are written from the project in <code>.csv</code> files. The following code reads all <code>.csv</code> files from the working directory. It creates new variables for the source file name (<code>file</code>) and the number of offspring produced by each individual (<code>offspring_count</code>). It then appends all the data files into a single data frame called <code>allfiles</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"*.csv"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>allfiles <span class="ot">=</span> <span class="fu">data.frame</span>()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(csv <span class="cf">in</span> files){</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  Twin3 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(csv, <span class="at">as.is=</span>T, <span class="at">header=</span>T)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  Twin3[<span class="st">'file'</span>] <span class="ot">=</span> csv</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Twin3<span class="ot">&lt;-</span>Twin3<span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Unique.Slime.ID =</span> <span class="fu">paste</span>(Wave.Number, <span class="st">"."</span>, Slime.ID))<span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Unique.Parent.One =</span> <span class="fu">paste</span>(Wave.Number<span class="dv">-1</span>, <span class="st">"."</span>, Parent.One))<span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Unique.Parent.Two =</span> <span class="fu">paste</span>(Wave.Number<span class="dv">-1</span>, <span class="st">"."</span>, Parent.Two))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>df_parents <span class="ot">&lt;-</span> Twin3 <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Unique.Parent.One, Unique.Parent.Two) <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"parent_type"</span>, <span class="at">values_to =</span> <span class="st">"parent_id"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of offspring for each parent</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>offspring_counts <span class="ot">&lt;-</span> df_parents <span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(parent_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">offspring_count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>offspring_counts <span class="ot">&lt;-</span> offspring_counts<span class="sc">%&gt;%</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(parent_id <span class="sc">!=</span> <span class="st">"-1 . N/A"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>offspring_counts<span class="ot">&lt;-</span> <span class="fu">rename</span>(offspring_counts, <span class="at">Unique.Slime.ID =</span> parent_id)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Twin3 <span class="ot">&lt;-</span> Twin3 <span class="sc">%&gt;%</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(offspring_counts, <span class="at">by =</span> <span class="st">"Unique.Slime.ID"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">replace_na</span>(<span class="fu">list</span>(<span class="at">offspring_count =</span> <span class="dv">0</span>))</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>allfiles<span class="ot">&lt;-</span><span class="fu">rbind</span>(allfiles,Twin3)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>allfiles<span class="ot">&lt;-</span>allfiles<span class="sc">%&gt;%</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>X)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>SpeedAvg<span class="ot">&lt;-</span>allfiles<span class="sc">%&gt;%</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(file, Wave.Number)<span class="sc">%&gt;%</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">meanSpeed =</span> <span class="fu">mean</span>(Speed.Trait))</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(SpeedAvg, file = "speed.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The <code>allfiles</code> dataframe contains the following variables (I also show a few columns of the example data):</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data.dictionary <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">as.data.frame</span>(<span class="fu">head</span>(allfiles)))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data.dictionary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">1</th>
+<th style="text-align: left;">2</th>
+<th style="text-align: left;">3</th>
+<th style="text-align: left;">4</th>
+<th style="text-align: left;">5</th>
+<th style="text-align: left;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Slime.ID</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wave.Number</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Player.Distance.Fitness</td>
+<td style="text-align: left;">345.6402</td>
+<td style="text-align: left;">326.7469</td>
+<td style="text-align: left;">333.1904</td>
+<td style="text-align: left;">334.0458</td>
+<td style="text-align: left;">332.3382</td>
+<td style="text-align: left;">349.7096</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parent.One</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Parent.Two</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Main.Type</td>
+<td style="text-align: left;">Fire</td>
+<td style="text-align: left;">Lightning</td>
+<td style="text-align: left;">Ice</td>
+<td style="text-align: left;">Fire</td>
+<td style="text-align: left;">Balanced</td>
+<td style="text-align: left;">Player</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Secondary.Type</td>
+<td style="text-align: left;">Lightning</td>
+<td style="text-align: left;">Fire</td>
+<td style="text-align: left;">Acid</td>
+<td style="text-align: left;">Ice</td>
+<td style="text-align: left;">Lightning</td>
+<td style="text-align: left;">Laser</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Main.Resistance.Gene</td>
+<td style="text-align: left;">2.0608870</td>
+<td style="text-align: left;">1.6943360</td>
+<td style="text-align: left;">-0.2161741</td>
+<td style="text-align: left;">1.7416560</td>
+<td style="text-align: left;">0.5911906</td>
+<td style="text-align: left;">1.1593740</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Main.Resistance.Trait</td>
+<td style="text-align: left;">0.5659195</td>
+<td style="text-align: left;">0.5432874</td>
+<td style="text-align: left;">0.4245693</td>
+<td style="text-align: left;">0.5462212</td>
+<td style="text-align: left;">0.4744716</td>
+<td style="text-align: left;">0.5099596</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secondary.Resistance.Gene</td>
+<td style="text-align: left;">0.01938968</td>
+<td style="text-align: left;">-1.62253900</td>
+<td style="text-align: left;">1.17000200</td>
+<td style="text-align: left;">-0.10093590</td>
+<td style="text-align: left;">-2.46492300</td>
+<td style="text-align: left;">3.62861800</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Secondary.Resistance.Trait</td>
+<td style="text-align: left;">0.4390170</td>
+<td style="text-align: left;">0.3417208</td>
+<td style="text-align: left;">0.5106236</td>
+<td style="text-align: left;">0.4316226</td>
+<td style="text-align: left;">0.2960392</td>
+<td style="text-align: left;">0.6586209</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slime.View.Range.Gene</td>
+<td style="text-align: left;">1.4521710</td>
+<td style="text-align: left;">0.2976832</td>
+<td style="text-align: left;">1.3196740</td>
+<td style="text-align: left;">0.7571017</td>
+<td style="text-align: left;">-1.0744470</td>
+<td style="text-align: left;">0.3044407</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Slime.View.Range.Trait</td>
+<td style="text-align: left;">9.846652</td>
+<td style="text-align: left;">8.778949</td>
+<td style="text-align: left;">9.726093</td>
+<td style="text-align: left;">9.207671</td>
+<td style="text-align: left;">7.498720</td>
+<td style="text-align: left;">8.785275</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tower.View.Range.Gene</td>
+<td style="text-align: left;">0.7422258</td>
+<td style="text-align: left;">-1.2331670</td>
+<td style="text-align: left;">3.0711040</td>
+<td style="text-align: left;">-0.2798744</td>
+<td style="text-align: left;">-1.3005350</td>
+<td style="text-align: left;">-1.5916860</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tower.View.Range.Trait</td>
+<td style="text-align: left;">6.831944</td>
+<td style="text-align: left;">5.042684</td>
+<td style="text-align: left;">9.401867</td>
+<td style="text-align: left;">5.852772</td>
+<td style="text-align: left;">4.989344</td>
+<td style="text-align: left;">4.764777</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Player.View.Range.Gene</td>
+<td style="text-align: left;">-0.7063282</td>
+<td style="text-align: left;">-1.0553400</td>
+<td style="text-align: left;">0.7628499</td>
+<td style="text-align: left;">-2.8482810</td>
+<td style="text-align: left;">1.2311350</td>
+<td style="text-align: left;">-0.7137253</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Player.View.Range.Trait</td>
+<td style="text-align: left;">3.356673</td>
+<td style="text-align: left;">3.203144</td>
+<td style="text-align: left;">4.080423</td>
+<td style="text-align: left;">2.528954</td>
+<td style="text-align: left;">4.335402</td>
+<td style="text-align: left;">3.353344</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wall.View.Range.Gene</td>
+<td style="text-align: left;">0.1313843</td>
+<td style="text-align: left;">2.9221460</td>
+<td style="text-align: left;">1.9864920</td>
+<td style="text-align: left;">-0.6508777</td>
+<td style="text-align: left;">-2.3591150</td>
+<td style="text-align: left;">1.1352810</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wall.View.Range.Trait</td>
+<td style="text-align: left;">5.131722</td>
+<td style="text-align: left;">7.495582</td>
+<td style="text-align: left;">6.651211</td>
+<td style="text-align: left;">4.572602</td>
+<td style="text-align: left;">3.541226</td>
+<td style="text-align: left;">5.923522</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sheep.View.Range.Gene</td>
+<td style="text-align: left;">1.7711210</td>
+<td style="text-align: left;">-0.9669515</td>
+<td style="text-align: left;">1.6172160</td>
+<td style="text-align: left;">1.0537250</td>
+<td style="text-align: left;">-2.7176960</td>
+<td style="text-align: left;">-3.5059080</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sheep.View.Range.Trait</td>
+<td style="text-align: left;">6.462865</td>
+<td style="text-align: left;">4.362004</td>
+<td style="text-align: left;">6.329936</td>
+<td style="text-align: left;">5.856324</td>
+<td style="text-align: left;">3.357576</td>
+<td style="text-align: left;">2.991911</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slime.Attraction.Gene</td>
+<td style="text-align: left;">-0.9736148</td>
+<td style="text-align: left;">-0.7666807</td>
+<td style="text-align: left;">1.8677910</td>
+<td style="text-align: left;">-2.7497970</td>
+<td style="text-align: left;">-1.6096610</td>
+<td style="text-align: left;">-1.9497770</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Slime.Attraction.Trait</td>
+<td style="text-align: left;">0.4394477</td>
+<td style="text-align: left;">0.4522286</td>
+<td style="text-align: left;">0.6146611</td>
+<td style="text-align: left;">0.3346007</td>
+<td style="text-align: left;">0.4007322</td>
+<td style="text-align: left;">0.3804958</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tower.Attraction.Gene</td>
+<td style="text-align: left;">-0.4425031</td>
+<td style="text-align: left;">4.2579340</td>
+<td style="text-align: left;">1.0364300</td>
+<td style="text-align: left;">-0.7169113</td>
+<td style="text-align: left;">3.0108880</td>
+<td style="text-align: left;">1.3958960</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tower.Attraction.Trait</td>
+<td style="text-align: left;">-0.5044915</td>
+<td style="text-align: left;">0.0322305</td>
+<td style="text-align: left;">-0.3543820</td>
+<td style="text-align: left;">-0.5296178</td>
+<td style="text-align: left;">-0.1230128</td>
+<td style="text-align: left;">-0.3144833</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Player.Attraction.Gene</td>
+<td style="text-align: left;">-0.6821441</td>
+<td style="text-align: left;">-1.6926180</td>
+<td style="text-align: left;">-1.3177170</td>
+<td style="text-align: left;">-1.7879160</td>
+<td style="text-align: left;">-1.1259150</td>
+<td style="text-align: left;">1.3713550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Player.Attraction.Trait</td>
+<td style="text-align: left;">0.01473093</td>
+<td style="text-align: left;">-0.11111660</td>
+<td style="text-align: left;">-0.06462443</td>
+<td style="text-align: left;">-0.12286560</td>
+<td style="text-align: left;">-0.04071683</td>
+<td style="text-align: left;">0.26494500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wall.Attraction.Gene</td>
+<td style="text-align: left;">0.1195688</td>
+<td style="text-align: left;">2.5306750</td>
+<td style="text-align: left;">-2.0030220</td>
+<td style="text-align: left;">-0.1396167</td>
+<td style="text-align: left;">-4.3316610</td>
+<td style="text-align: left;">-1.5999020</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wall.Attraction.Trait</td>
+<td style="text-align: left;">-0.8776227</td>
+<td style="text-align: left;">-0.7969486</td>
+<td style="text-align: left;">-0.9241948</td>
+<td style="text-align: left;">-0.8844134</td>
+<td style="text-align: left;">-0.9561825</td>
+<td style="text-align: left;">-0.9168254</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sheep.Attraction.Gene</td>
+<td style="text-align: left;">0.8572116</td>
+<td style="text-align: left;">0.9566224</td>
+<td style="text-align: left;">5.7019630</td>
+<td style="text-align: left;">1.0464360</td>
+<td style="text-align: left;">2.7968160</td>
+<td style="text-align: left;">3.2207600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sheep.Attraction.Trait</td>
+<td style="text-align: left;">0.7710594</td>
+<td style="text-align: left;">0.7754170</td>
+<td style="text-align: left;">0.9187506</td>
+<td style="text-align: left;">0.7793030</td>
+<td style="text-align: left;">0.8454307</td>
+<td style="text-align: left;">0.8587795</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slime.Optimal.Distance.Gene</td>
+<td style="text-align: left;">0.2664202</td>
+<td style="text-align: left;">1.2414460</td>
+<td style="text-align: left;">-0.8655708</td>
+<td style="text-align: left;">0.9262612</td>
+<td style="text-align: left;">-1.5423680</td>
+<td style="text-align: left;">1.0435380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Slime.Optimal.Distance.Trait</td>
+<td style="text-align: left;">0.27595890</td>
+<td style="text-align: left;">0.38437310</td>
+<td style="text-align: left;">0.14086080</td>
+<td style="text-align: left;">0.35029730</td>
+<td style="text-align: left;">0.05714178</td>
+<td style="text-align: left;">0.36309150</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Speed.Gene</td>
+<td style="text-align: left;">2.6708090</td>
+<td style="text-align: left;">-1.5936590</td>
+<td style="text-align: left;">3.2378040</td>
+<td style="text-align: left;">-0.3551353</td>
+<td style="text-align: left;">2.5948350</td>
+<td style="text-align: left;">-0.6766453</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Speed.Trait</td>
+<td style="text-align: left;">3.594294</td>
+<td style="text-align: left;">1.996484</td>
+<td style="text-align: left;">3.852987</td>
+<td style="text-align: left;">2.390815</td>
+<td style="text-align: left;">3.560308</td>
+<td style="text-align: left;">2.282792</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Turn.Rate.Gene</td>
+<td style="text-align: left;">-2.0039470</td>
+<td style="text-align: left;">2.6656370</td>
+<td style="text-align: left;">1.0234140</td>
+<td style="text-align: left;">-1.1901560</td>
+<td style="text-align: left;">-0.4308299</td>
+<td style="text-align: left;">2.6089630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Turn.Rate.Trait</td>
+<td style="text-align: left;">0.1190994</td>
+<td style="text-align: left;">0.3028864</td>
+<td style="text-align: left;">0.2237151</td>
+<td style="text-align: left;">0.1421509</td>
+<td style="text-align: left;">0.1669071</td>
+<td style="text-align: left;">0.2999031</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sprint.Duration.Gene</td>
+<td style="text-align: left;">0.3580502</td>
+<td style="text-align: left;">-2.5078260</td>
+<td style="text-align: left;">0.9046021</td>
+<td style="text-align: left;">-0.1219785</td>
+<td style="text-align: left;">0.2219243</td>
+<td style="text-align: left;">-1.5433140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sprint.Duration.Trait</td>
+<td style="text-align: left;">2.611816</td>
+<td style="text-align: left;">1.741005</td>
+<td style="text-align: left;">2.781489</td>
+<td style="text-align: left;">2.461885</td>
+<td style="text-align: left;">2.569334</td>
+<td style="text-align: left;">2.023610</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sprint.Cooldown.Gene</td>
+<td style="text-align: left;">0.1790418</td>
+<td style="text-align: left;">1.1899140</td>
+<td style="text-align: left;">-3.4777150</td>
+<td style="text-align: left;">3.0333090</td>
+<td style="text-align: left;">-0.8813199</td>
+<td style="text-align: left;">-1.8871880</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sprint.Cooldown.Trait</td>
+<td style="text-align: left;">2.7232060</td>
+<td style="text-align: left;">3.8336290</td>
+<td style="text-align: left;">0.1497651</td>
+<td style="text-align: left;">4.7702820</td>
+<td style="text-align: left;">1.4645220</td>
+<td style="text-align: left;">0.6578274</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">file</td>
+<td style="text-align: left;">./geneWriteFile13-20-50_07_24_2023.csv</td>
+<td style="text-align: left;">./geneWriteFile13-20-50_07_24_2023.csv</td>
+<td style="text-align: left;">./geneWriteFile13-20-50_07_24_2023.csv</td>
+<td style="text-align: left;">./geneWriteFile13-20-50_07_24_2023.csv</td>
+<td style="text-align: left;">./geneWriteFile13-20-50_07_24_2023.csv</td>
+<td style="text-align: left;">./geneWriteFile13-20-50_07_24_2023.csv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unique.Slime.ID</td>
+<td style="text-align: left;">0 . 0</td>
+<td style="text-align: left;">0 . 1</td>
+<td style="text-align: left;">0 . 2</td>
+<td style="text-align: left;">0 . 3</td>
+<td style="text-align: left;">0 . 4</td>
+<td style="text-align: left;">0 . 5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unique.Parent.One</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unique.Parent.Two</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+<td style="text-align: left;">-1 . N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">offspring_count</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Variables that end in <code>.Gene</code> are the values of the genome for that particular locus. Variables that end in <code>.Trait</code> are the values of the trait for that particular locus.</p>
+</section>
+<section id="experimental-conditions" class="level2">
+<h2 class="anchored" data-anchor-id="experimental-conditions">Experimental Conditions</h2>
+<p><strong>Use this section to describe the goal of the data collection and the key conditions that define the test.</strong></p>
+<p>This test occurred July 21, 2023 and was focused on the new fitness functions implemented by Justin. We are interested in determining whether the fitness functions work correctly.</p>
+<p>The conditions were a standard “L” shaped set of walls with four lightning towers. The slimes acquire fitness by getting close to the player using a formula of 50,000 / (path distance +1). For replicates 4-6, Justin corrected the math concerning the <code>~.Resistance.~</code> genes.</p>
+</section>
+<section id="slime-types" class="level2">
+<h2 class="anchored" data-anchor-id="slime-types">Slime Types</h2>
+<p>Each Slime has a <code>Main.Type</code> and a <code>Secondary.Type</code>. These types use the <code>~.Resistance.~</code> category to confer resistance to the appropriate damage type. Under certain experimental conditions, we would expect the <code>~.Type</code> and <code>~.Resistance.~</code> genes and traits to evolve in response to the predominant damage type delivered by the player.</p>
+<p>The following code creates two summary dataframes with the suffix <code>~Typecounts</code> that count the number of slimes of each <code>~.Type</code> in each generation for each replicate. It then creates the graphs of <code>~Type</code> frequency over time.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>MainTypecounts <span class="ot">&lt;-</span> allfiles <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Main.Type, Wave.Number, file) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Main.count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>SecondaryTypecounts <span class="ot">&lt;-</span> allfiles <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Secondary.Type, Wave.Number, file) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Secondary.count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MainTypecounts, <span class="fu">aes</span>(<span class="at">x =</span> Wave.Number, <span class="at">y =</span> Main.count, <span class="at">fill =</span> <span class="fu">as.factor</span>(Main.Type))) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"stack"</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Generation"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">fill =</span> <span class="st">"Main Slime Type"</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>file, <span class="at">ncol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SecondaryTypecounts, <span class="fu">aes</span>(<span class="at">x =</span> Wave.Number, <span class="at">y =</span> Secondary.count, <span class="at">fill =</span> <span class="fu">as.factor</span>(Secondary.Type))) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"stack"</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Generation"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">fill =</span> <span class="st">"Secondary Slime Type"</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>file, <span class="at">ncol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="slime-fitness" class="level2">
+<h2 class="anchored" data-anchor-id="slime-fitness">Slime Fitness</h2>
+<p>This section should summarize the behavior of the fitness function.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(allfiles, <span class="fu">aes</span>(<span class="at">x=</span>Wave.Number, <span class="at">y=</span> <span class="fu">log10</span>(Player.Distance.Fitness)))<span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>Wave.Number, <span class="at">y=</span> <span class="fu">log10</span>(Player.Distance.Fitness), <span class="at">color =</span> offspring_count),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">size=</span> <span class="fl">0.5</span>,     <span class="at">alpha =</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()<span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>file, <span class="at">ncol =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">low=</span><span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 17 rows containing non-finite values (`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(allfiles, <span class="fu">aes</span>(<span class="fu">log10</span>(offspring_count))) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> .<span class="dv">1</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">"black"</span>, </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">2</span>, <span class="at">adjust =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>file, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+ℹ Please use `after_stat(density)` instead.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 9204 rows containing non-finite values (`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 9204 rows containing non-finite values (`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(allfiles, <span class="fu">aes</span>(<span class="fu">log10</span>(Player.Distance.Fitness))) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> .<span class="dv">5</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">"black"</span>, </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">2</span>, <span class="at">adjust =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>file, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 17 rows containing non-finite values (`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 17 rows containing non-finite values (`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(allfiles, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Wave.Number), <span class="at">y =</span> <span class="fu">log10</span>(Player.Distance.Fitness), <span class="at">fill =</span> Wave.Number)) <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>file, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 17 rows containing non-finite values (`stat_ydensity()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-4-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="trait-evolution" class="level2">
+<h2 class="anchored" data-anchor-id="trait-evolution">Trait Evolution</h2>
+<p>This section should summarize the patterns of trait evolution</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Traits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Main.Resistance.Trait"</span>, <span class="st">"Secondary.Resistance.Trait"</span>, <span class="st">"Speed.Trait"</span>,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">"Tower.Attraction.Trait"</span>, <span class="st">"Slime.Optimal.Distance.Trait"</span>, <span class="st">"Turn.Rate.Trait"</span>, </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"Slime.View.Range.Trait"</span>, <span class="st">"Tower.View.Range.Trait"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(allfiles, <span class="fu">aes_string</span>(<span class="at">x =</span> <span class="st">"Wave.Number"</span>, <span class="at">y =</span> Traits[i], <span class="at">color =</span> <span class="st">"offspring_count"</span>)) <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>(<span class="fu">aes_string</span>(<span class="at">x =</span> <span class="st">"Wave.Number"</span>, <span class="at">y =</span> Traits[i]), <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_continuous</span>(<span class="at">low=</span><span class="st">"lightblue"</span>, <span class="at">high=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>         <span class="co">#geom_smooth(method = "loess") +</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>         <span class="fu">facet_wrap</span>(<span class="st">"~file"</span>, <span class="at">ncol =</span> <span class="dv">1</span>)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
+ℹ Please use tidy evaluation idioms with `aes()`.
+ℹ See also `vignette("ggplot2-in-packages")` for more information.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-6.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-7.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="TwinStick_files/figure-html/unnamed-chunk-5-8.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="heatmap" class="level2">
+<h2 class="anchored" data-anchor-id="heatmap">Heatmap</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>LastGen <span class="ot">&lt;-</span> Twin3</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>LastGen <span class="ot">&lt;-</span> Twin3 <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Wave.Number, Slime.ID, Player.Distance.Fitness, Main.Resistance.Trait, Secondary.Resistance.Trait, Slime.View.Range.Trait, </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>         Tower.View.Range.Trait, Player.View.Range.Trait, Wall.View.Range.Trait, Sheep.View.Range.Trait, Slime.Attraction.Trait, </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>         Tower.Attraction.Trait, Player.Attraction.Trait, Wall.Attraction.Trait, Sheep.Attraction.Trait, Slime.Optimal.Distance.Trait, </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>         Speed.Trait, Turn.Rate.Trait, Sprint.Duration.Trait, Sprint.Cooldown.Trait, offspring_count) <span class="sc">%&gt;%</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Wave.Number <span class="sc">==</span> <span class="dv">35</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>paletteLength <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>myColor <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"white"</span>, <span class="st">"#ED2024"</span>))(paletteLength)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># length(breaks) == length(paletteLength) + 1</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># use floor and ceiling to deal with even/odd length pallettelengths</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>Heatmap2 <span class="ot">&lt;-</span> LastGen <span class="sc">%&gt;%</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Player.Distance.Fitness, Main.Resistance.Trait, Secondary.Resistance.Trait, Slime.View.Range.Trait, </span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>         Tower.View.Range.Trait, Player.View.Range.Trait, Wall.View.Range.Trait, Sheep.View.Range.Trait, Slime.Attraction.Trait, </span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>         Tower.Attraction.Trait, Player.Attraction.Trait, Wall.Attraction.Trait, Sheep.Attraction.Trait, Slime.Optimal.Distance.Trait, </span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>         Speed.Trait, Turn.Rate.Trait, Sprint.Duration.Trait, Sprint.Cooldown.Trait)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>Heatmap2[,<span class="dv">1</span><span class="sc">:</span><span class="dv">18</span>]<span class="ot">&lt;-</span> <span class="fu">scale</span>(Heatmap2[,<span class="dv">1</span><span class="sc">:</span><span class="dv">18</span>])</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Heatmap2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Fitness'</span>, <span class="st">'Main Resistance'</span>, <span class="st">'Secondary Resistance'</span>, <span class="st">'Slime View Range'</span>, <span class="st">'Tower Viewe Range'</span>, <span class="st">'Player View Range'</span>, </span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Wall View Range'</span>, <span class="st">'Sheep View Range'</span>, <span class="st">'Slime Attraction'</span>, <span class="st">'Tower Attraction'</span>, <span class="st">'Player Attraction'</span>, <span class="st">'Wall Attraction'</span>,</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Sheep Attraction'</span>, <span class="st">'Slime Optimal Distance'</span>, <span class="st">'Speed'</span>, <span class="st">'Turn Rate'</span>, <span class="st">'Sprint Duration'</span>, <span class="st">'Sprint Cooldown'</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>Heatmatrix2 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(Heatmap2)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>myBreaks2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="fu">min</span>(Heatmatrix2), <span class="dv">0</span>, <span class="at">length.out=</span><span class="fu">ceiling</span>(paletteLength<span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> <span class="dv">1</span>), <span class="fu">seq</span>(<span class="fu">max</span>(Heatmatrix2)<span class="sc">/</span>paletteLength, <span class="fu">max</span>(Heatmatrix2), <span class="at">length.out=</span><span class="fu">floor</span>(paletteLength<span class="sc">/</span><span class="dv">2</span>)))</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the heatmap</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="fu">pheatmap</span>(Heatmatrix2, </span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_rows =</span> <span class="cn">TRUE</span>, <span class="co"># don't cluster rows</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_cols =</span> <span class="cn">TRUE</span>, <span class="co"># don't cluster columns</span></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>         <span class="at">clustering_distance_cols =</span> <span class="st">"euclidean"</span>, </span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>         <span class="at">clustering_distance_rows =</span> <span class="st">"euclidean"</span>, </span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>         <span class="at">clustering_method =</span> <span class="st">"complete"</span>,</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>         <span class="at">cellheight =</span> <span class="fl">0.75</span>,</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">fontsize_col =</span> <span class="dv">10</span>,</span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> myColor,</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>         <span class="at">breaks =</span> myBreaks2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
