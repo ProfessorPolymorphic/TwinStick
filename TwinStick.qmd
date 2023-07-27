@@ -61,11 +61,38 @@ allfiles<-rbind(allfiles,Twin3)
 allfiles<-allfiles%>%
   select(-X)
 
-SpeedAvg<-allfiles%>%
-  group_by(file, Wave.Number)%>%
-  summarize(meanSpeed = mean(Speed.Trait))
 
-#write.csv(SpeedAvg, file = "speed.csv")
+Traits <- c("Main.Resistance.Trait", "Secondary.Resistance.Trait", "Speed.Trait",
+           "Tower.Attraction.Trait", "Slime.Optimal.Distance.Trait", "Turn.Rate.Trait", 
+           "Slime.View.Range.Trait", "Tower.View.Range.Trait")
+
+Genes <- c("Main.Resistance.Gene", "Secondary.Resistance.Gene", "Speed.Gene",
+           "Tower.Attraction.Gene", "Slime.Optimal.Distance.Gene", "Turn.Rate.Gene", 
+           "Slime.View.Range.Gene", "Tower.View.Range.Gene")
+
+allfiles<-allfiles%>%
+  mutate(Generation=as.factor(Wave.Number))%>%
+  mutate(offspring.count.Fitness = offspring_count)
+
+TraitAvg <- allfiles %>%
+  group_by(file, Generation) %>%
+  summarize(across(ends_with("Trait"), mean,  na.rm = TRUE))
+
+GeneAvg <- allfiles %>%
+  group_by(file, Generation) %>%
+  summarize(across(ends_with("Gene"), list(mean = mean, var = var), na.rm = TRUE, .names = "{.fn}.{.col}"))
+
+FitAvg <- allfiles %>%
+  group_by(file, Generation) %>%
+  summarize(across(ends_with("Fitness"), list(mean = mean, var = var), na.rm = TRUE, .names = "{.fn}.{.col}"))
+
+
+  
+
+  
+
+
+
 
 ```
 
@@ -96,26 +123,26 @@ The following code creates two summary dataframes with the suffix `~Typecounts` 
 ```{r}
 
 MainTypecounts <- allfiles %>%
-  group_by(Main.Type, Wave.Number, file) %>%
+  group_by(Main.Type, Generation, file) %>%
   summarise(Main.count = n(), .groups = "drop")
 
 SecondaryTypecounts <- allfiles %>%
-  group_by(Secondary.Type, Wave.Number, file) %>%
+  group_by(Secondary.Type, Generation, file) %>%
   summarise(Secondary.count = n(), .groups = "drop")
 
             
 
-ggplot(MainTypecounts, aes(x = Wave.Number, y = Main.count, fill = as.factor(Main.Type))) +
+ggplot(MainTypecounts, aes(x = Generation, y = Main.count, fill = as.factor(Main.Type))) +
   geom_col(position = "stack") +
   labs(x = "Generation", y = "Count", fill = "Main Slime Type") +
   theme_minimal()+
-  facet_wrap(~file, ncol=1)
+  facet_wrap(~file, ncol=2)
 
-ggplot(SecondaryTypecounts, aes(x = Wave.Number, y = Secondary.count, fill = as.factor(Secondary.Type))) +
+ggplot(SecondaryTypecounts, aes(x = Generation, y = Secondary.count, fill = as.factor(Secondary.Type))) +
   geom_col(position = "stack") +
   labs(x = "Generation", y = "Count", fill = "Secondary Slime Type") +
   theme_minimal()+
-  facet_wrap(~file, ncol=1)
+  facet_wrap(~file, ncol=2)
 
 ```
 
@@ -128,8 +155,15 @@ ggplot(allfiles, aes(x=Wave.Number, y= log10(Player.Distance.Fitness)))+
   geom_point(aes(x=Wave.Number, y= log10(Player.Distance.Fitness), color = offspring_count),
         size= 0.5,     alpha =0.2)+
   geom_smooth()+
-  facet_wrap(~file, ncol = 1)+
+  facet_wrap(~file, ncol = 2)+
   scale_color_continuous(low="blue", high = "red")
+
+
+ggplot(data = FitAvg, aes(x = as.numeric(Generation), y = var.offspring.count.Fitness))+
+    geom_point()+
+    geom_smooth(method = "loess") +
+    theme(legend.position = "none") +
+    facet_wrap(~file, ncol = 2) 
 
 ggplot(allfiles, aes(log10(offspring_count))) +
   geom_histogram(aes(y = ..density..), 
@@ -137,7 +171,7 @@ ggplot(allfiles, aes(log10(offspring_count))) +
                  colour = "black", 
                  fill = "white") +
   geom_density(alpha = .2, adjust = 1) +
-  facet_wrap(~file, ncol = 1)
+  facet_wrap(~file, ncol = 2)
 
 ggplot(allfiles, aes(log10(Player.Distance.Fitness))) +
   geom_histogram(aes(y = ..density..), 
@@ -145,13 +179,16 @@ ggplot(allfiles, aes(log10(Player.Distance.Fitness))) +
                  colour = "black", 
                  fill = "white") +
   geom_density(alpha = .2, adjust = 1) +
-  facet_wrap(~file, ncol = 1)
+  facet_wrap(~file, ncol = 2)
 
 
 ggplot(allfiles, aes(x = as.factor(Wave.Number), y = log10(Player.Distance.Fitness), fill = Wave.Number)) + 
   geom_violin() +
   theme(legend.position = "none")+
-  facet_wrap(~file, ncol = 1)
+  facet_wrap(~file, ncol = 2)
+
+
+
 ```
 
 ## Trait Evolution
@@ -160,42 +197,50 @@ This section should summarize the patterns of trait evolution
 
 ```{r}
 
-Traits <- c("Main.Resistance.Trait", "Secondary.Resistance.Trait", "Speed.Trait",
-           "Tower.Attraction.Trait", "Slime.Optimal.Distance.Trait", "Turn.Rate.Trait", 
-           "Slime.View.Range.Trait", "Tower.View.Range.Trait")
-
-
- 
-allfiles<-allfiles%>%
-  mutate(Generation=as.factor(Wave.Number))
   
 
 
-for (i in 1:8) {
-  p <- 
-    
-    ggplot(allfiles, aes_string(x = "Generation", y = Traits[i], fill = "Generation")) + 
-  geom_violin() +
-  theme(legend.position = "none")+
-  facet_wrap(~file, ncol = 1)
-    
-    # ggplot(allfiles, aes_string(x = "Wave.Number", y = Traits[i], color = "offspring_count")) +
-    #      geom_point(aes_string(x = "Wave.Number", y = Traits[i]), size = 0.5, alpha = 0.2) +
-    # scale_color_continuous(low="lightblue", high="red")+
-    #      #geom_smooth(method = "loess") +
-    #      facet_wrap("~file", ncol = 1)
   
-  print(p)
+
+
+for(i in seq_along(Traits)){
+
+  plot <- ggplot(data = TraitAvg, aes(x = as.numeric(Generation), y = !!sym(Traits[i])))+
+    geom_smooth(data = TraitAvg, aes(x = as.numeric(Generation), y = !!sym(Traits[i])), method = "loess") +
+    theme(legend.position = "none") +
+    facet_wrap(~file, ncol = 2) 
+
+  print(plot)
 }
 
 
+
+
+```
+
+## Gene Evolution
+
+```{r}
+
+
+
+for(i in seq_along(Genes)){
+
+  plot <- ggplot(data = GeneAvg, aes(x = as.numeric(Generation), y = !!sym(paste("var.",Genes[i], sep = ""))))+
+    geom_point()+
+    geom_smooth(data = GeneAvg, aes(x = as.numeric(Generation), y = !!sym(paste("var.",Genes[i], sep = "")), method = "loess")) +
+    theme(legend.position = "none") +
+    facet_wrap(~file, ncol = 2) 
+
+  print(plot)
+}
 
 ```
 
 ## Heatmap
 
 ```{r}
-# #| eval: false
+#| eval: false
 
 maxwave = max(allfiles$Wave.Number)
 
