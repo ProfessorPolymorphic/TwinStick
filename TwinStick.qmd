@@ -10,11 +10,13 @@ The purpose of this document is to consistently summarize the data from Project 
 
 ## Data
 
-In this section, we ingest the data from whatever runs are relevant to the analysis.  The data are written from the project in `.csv` files.  The following code reads all `.csv` files from the working directory.  It creates new variables for the source file name (`file`) and the number of offspring produced by each individual (`offspring_count`).  It then appends all the data files into a single data frame called `allfiles`.
+In this section, we ingest the data from whatever runs are relevant to the analysis. The data are written from the project in `.csv` files. The following code reads all `.csv` files from the working directory. It creates new variables for the source file name (`file`) and the number of offspring produced by each individual (`offspring_count`). It then appends all the data files into a single data frame called `allfiles`.
+
 ```{r}
 #| output: false
 
 library(tidyverse)
+library(pheatmap)
 
 
 files <- list.files(pattern = "*.csv", full.names = TRUE)
@@ -75,21 +77,21 @@ knitr::kable(data.dictionary)
 
 ```
 
-Variables that end in `.Gene` are the values of the genome for that particular locus.  Variables that end in `.Trait` are the values of the trait for that particular locus.
+Variables that end in `.Gene` are the values of the genome for that particular locus. Variables that end in `.Trait` are the values of the trait for that particular locus.
 
 ## Experimental Conditions
 
 **Use this section to describe the goal of the data collection and the key conditions that define the test.**
 
-This test occurred July 21, 2023 and was focused on the new fitness functions implemented by Justin.  We are interested in determining whether the fitness functions work correctly.
+This test occurred July 21, 2023 and was focused on the new fitness functions implemented by Justin. We are interested in determining whether the fitness functions work correctly.
 
-The conditions were a standard "L" shaped set of walls with four lightning towers.  The slimes acquire fitness by getting close to the player using a formula of 50,000 / (path distance +1). For replicates 4-6, Justin corrected the math concerning the `~.Resistance.~` genes.
+The conditions were a standard "L" shaped set of walls with four lightning towers. The slimes acquire fitness by getting close to the player using a formula of 50,000 / (path distance +1). For replicates 4-6, Justin corrected the math concerning the `~.Resistance.~` genes.
 
 ## Slime Types
 
-Each Slime has a `Main.Type` and a `Secondary.Type`.  These types use the `~.Resistance.~` category to confer resistance to the appropriate damage type.  Under certain experimental conditions, we would expect the `~.Type` and  `~.Resistance.~` genes and traits to evolve in response to the predominant damage type delivered by the player.
+Each Slime has a `Main.Type` and a `Secondary.Type`. These types use the `~.Resistance.~` category to confer resistance to the appropriate damage type. Under certain experimental conditions, we would expect the `~.Type` and `~.Resistance.~` genes and traits to evolve in response to the predominant damage type delivered by the player.
 
-The following code creates two summary dataframes with the suffix `~Typecounts` that count the number of slimes of each `~.Type` in each generation for each replicate.  It then creates the graphs of `~Type` frequency over time.
+The following code creates two summary dataframes with the suffix `~Typecounts` that count the number of slimes of each `~.Type` in each generation for each replicate. It then creates the graphs of `~Type` frequency over time.
 
 ```{r}
 
@@ -190,22 +192,19 @@ for (i in 1:8) {
 
 ```
 
-
-
 ## Heatmap
 
 ```{r}
-#| eval: false
+# #| eval: false
 
-LastGen <- Twin3
+maxwave = max(allfiles$Wave.Number)
 
-LastGen <- Twin3 %>%
+Twin3 <- Twin3 %>%
   select(Wave.Number, Slime.ID, Player.Distance.Fitness, Main.Resistance.Trait, Secondary.Resistance.Trait, Slime.View.Range.Trait, 
          Tower.View.Range.Trait, Player.View.Range.Trait, Wall.View.Range.Trait, Sheep.View.Range.Trait, Slime.Attraction.Trait, 
          Tower.Attraction.Trait, Player.Attraction.Trait, Wall.Attraction.Trait, Sheep.Attraction.Trait, Slime.Optimal.Distance.Trait, 
          Speed.Trait, Turn.Rate.Trait, Sprint.Duration.Trait, Sprint.Cooldown.Trait, offspring_count) %>%
-  filter(Wave.Number == 35)
-
+  filter(Wave.Number == maxwave)
 
 paletteLength <- 50
 myColor <- colorRampPalette(c("blue", "white", "#ED2024"))(paletteLength)
@@ -213,33 +212,42 @@ myColor <- colorRampPalette(c("blue", "white", "#ED2024"))(paletteLength)
 # use floor and ceiling to deal with even/odd length pallettelengths
 
 
-Heatmap2 <- LastGen %>%
+Heatmap <- Twin3 %>%
   select(Player.Distance.Fitness, Main.Resistance.Trait, Secondary.Resistance.Trait, Slime.View.Range.Trait, 
          Tower.View.Range.Trait, Player.View.Range.Trait, Wall.View.Range.Trait, Sheep.View.Range.Trait, Slime.Attraction.Trait, 
          Tower.Attraction.Trait, Player.Attraction.Trait, Wall.Attraction.Trait, Sheep.Attraction.Trait, Slime.Optimal.Distance.Trait, 
          Speed.Trait, Turn.Rate.Trait, Sprint.Duration.Trait, Sprint.Cooldown.Trait)
 
-Heatmap2[,1:18]<- scale(Heatmap2[,1:18])
+Heatmap <- scale(Heatmap)
 
-colnames(Heatmap2) <- c('Fitness', 'Main Resistance', 'Secondary Resistance', 'Slime View Range', 'Tower Viewe Range', 'Player View Range', 
+colnames(Heatmap) <- c('Fitness', 'Main Resistance', 'Secondary Resistance', 'Slime View Range', 'Tower Viewe Range', 'Player View Range',
                         'Wall View Range', 'Sheep View Range', 'Slime Attraction', 'Tower Attraction', 'Player Attraction', 'Wall Attraction',
                         'Sheep Attraction', 'Slime Optimal Distance', 'Speed', 'Turn Rate', 'Sprint Duration', 'Sprint Cooldown')
-  
-Heatmatrix2 <- as.matrix(Heatmap2)
 
-myBreaks2 <- c(seq(min(Heatmatrix2), 0, length.out=ceiling(paletteLength/2) + 1), seq(max(Heatmatrix2)/paletteLength, max(Heatmatrix2), length.out=floor(paletteLength/2)))
+Heatmatrix2 <- as.matrix(Heatmap)
 
-# Generate the heatmap
-pheatmap(Heatmatrix2, 
+myBreaks2 <- c(seq(min(Heatmatrix2), 0, length.out=ceiling(paletteLength/2) + 1), seq(max(Heatmatrix2)/paletteLength, max(Heatmatrix2), 
+                                                                                      length.out=floor(paletteLength/2)))
+
+heatmap1 = pheatmap(Heatmatrix2,
          cluster_rows = TRUE, # don't cluster rows
          cluster_cols = TRUE, # don't cluster columns
-         clustering_distance_cols = "euclidean", 
-         clustering_distance_rows = "euclidean", 
+         clustering_distance_cols = "euclidean",
+         clustering_distance_rows = "euclidean",
          clustering_method = "complete",
-         cellheight = 0.75,
-         fontsize_col = 10,
+         kmeans_k = 20,
+         cellheight = 8,
+         fontsize_row = 8,
+         color = myColor,
+         breaks = myBreaks2,
+         border_color = NA)
+
+heatmap2 = pheatmap(Heatmatrix2,
+         cluster_rows = TRUE, # don't cluster rows
+         cluster_cols = TRUE, # don't cluster columns
+         clustering_distance_cols = "euclidean",
+         clustering_distance_rows = "euclidean",
+         clustering_method = "complete",
          color = myColor,
          breaks = myBreaks2)
-
 ```
-
